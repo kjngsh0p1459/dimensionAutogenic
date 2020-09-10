@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact name="dimenAutogenic:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/dimenAutogenic_jar</output-path>
+    <root id="root">
+      <element id="archive" name="dimenAutogenic.jar">
+        <element id="module-output" name="dimenAutogenic.main" />
+      </element>
+      <element id="library" level="project" name="Gradle: org.jetbrains:annotations:19.0.0" />
+      <element id="library" level="project" name="Gradle: junit:junit:4.12" />
+      <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest-core:1.3" />
+      <element id="library" level="module" name="Gradle: com.jetbrains:ideaIC:2019.3.4" module-name="dimenAutogenic.test" />
+    </root>
+  </artifact>
+</component>

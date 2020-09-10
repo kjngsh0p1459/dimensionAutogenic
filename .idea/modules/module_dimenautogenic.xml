@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_dimenautogenic" default="compile.module.dimenautogenic">
+  <dirname property="module.dimenautogenic.basedir" file="${ant.file.module_dimenautogenic}"/>
+  
+  <property name="module.jdk.home.dimenautogenic" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.dimenautogenic" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.dimenautogenic" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.dimenautogenic" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="dimenautogenic.output.dir" value="${module.dimenautogenic.basedir}/../../out/production/dimenAutogenic"/>
+  <property name="dimenautogenic.testoutput.dir" value="${module.dimenautogenic.basedir}/../../out/test/dimenAutogenic"/>
+  
+  <path id="dimenautogenic.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="dimenautogenic.module.production.classpath"/>
+  
+  <path id="dimenautogenic.runtime.production.module.classpath">
+    <pathelement location="${dimenautogenic.output.dir}"/>
+  </path>
+  
+  <path id="dimenautogenic.module.classpath">
+    <pathelement location="${dimenautogenic.output.dir}"/>
+  </path>
+  
+  <path id="dimenautogenic.runtime.module.classpath">
+    <pathelement location="${dimenautogenic.testoutput.dir}"/>
+    <pathelement location="${dimenautogenic.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.dimenautogenic">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.dimenautogenic">
+    <patternset refid="excluded.from.module.dimenautogenic"/>
+  </patternset>
+  
+  
+  <target name="compile.module.dimenautogenic" depends="compile.module.dimenautogenic.production,compile.module.dimenautogenic.tests" description="Compile module dimenAutogenic"/>
+  
+  <target name="compile.module.dimenautogenic.production" depends="register.custom.compilers" description="Compile module dimenAutogenic; production classes"/>
+  
+  <target name="compile.module.dimenautogenic.tests" depends="register.custom.compilers,compile.module.dimenautogenic.production" description="compile module dimenAutogenic; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.dimenautogenic" description="cleanup module">
+    <delete dir="${dimenautogenic.output.dir}"/>
+    <delete dir="${dimenautogenic.testoutput.dir}"/>
+  </target>
+</project>
