@@ -19,7 +19,15 @@ dependencies {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     version '2019.3.4'
+    type 'IC'
+    plugins 'android'
 }
+runIde {
+    // Absolute path to installed target 3.5 Android Studio to use as IDE Development Instance
+    // The "Contents" directory is macOS specific.
+    ideDirectory '/Applications/Android Studio.app/Contents'
+}
+
 patchPluginXml {
     changeNotes """
       Add change notes here.<br>
