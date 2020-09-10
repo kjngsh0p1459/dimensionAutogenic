@@ -15,10 +15,10 @@
          on how to target different products -->
     <depends>org.jetbrains.android</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
+    <extensions defaultExtensionNs="org.jetbrains.android">
         <!-- Add your extensions here -->
     </extensions>
-
+c
     <actions>
         <!-- Add your actions here -->
         <action id="generateDimens" class="com.dimenify.modified.action.GenerateSingleDimenAction"
@@ -29,7 +29,7 @@
         </action>
 
         <action id="rightClickDimenFile" class="com.dimenify.modified.action.BulkGenerateAction"
-                text="解像度を作成する"
+                text="新規解像度の係数を追加する"
                 icon="/icons/dimenify.png"
                 description="This generates dimensions for other density buckets">
             <add-to-group group-id="ProjectViewPopupMenu" anchor="before"

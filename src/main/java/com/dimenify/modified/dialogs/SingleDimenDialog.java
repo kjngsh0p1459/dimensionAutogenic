@@ -171,7 +171,7 @@ public class SingleDimenDialog extends DialogWrapper {
         for (int i = 0; i < actions.length; i++) {
             actionsAdd[i] = actions[i];
         }
-        actionsAdd[actionsAdd.length - 1] = new DialogWrapperAction("Add Bucket") {
+        actionsAdd[actionsAdd.length - 1] = new DialogWrapperAction("もっと追加する") {
             @Override
             protected void doAction(ActionEvent actionEvent) {
 

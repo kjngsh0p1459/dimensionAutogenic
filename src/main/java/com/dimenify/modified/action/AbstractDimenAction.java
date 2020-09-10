@@ -23,6 +23,7 @@ import java.text.DecimalFormatSymbols;
 import java.text.MessageFormat;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 import static com.dimenify.modified.util.Constants.*;
 
@@ -163,10 +164,10 @@ public abstract class AbstractDimenAction extends AnAction {
     }
 
     protected HashMap<String, Float>[] normalizeToHashMap(XmlTag[] dimens, int bucketIndex) {
-        HashMap<String, Float> dpHashMap = new HashMap<>();
-        HashMap<String, Float> spHashMap = new HashMap<>();
+        LinkedHashMap<String, Float> dpHashMap = new LinkedHashMap<>();
+        LinkedHashMap<String, Float> spHashMap = new LinkedHashMap<>();
         for (XmlTag tag : dimens) {
-            String val = tag.getValue().getText().toString().toLowerCase();
+            String val = tag.getValue().getText().toLowerCase();
             try {
                 if (val.endsWith(Constants.DP)) {
                     dpHashMap.put(tag.getAttribute("name").getValue(),
@@ -180,6 +181,15 @@ public abstract class AbstractDimenAction extends AnAction {
             }
 
         }
+
+        dpHashMap.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+
         return new HashMap[]{dpHashMap, spHashMap};
     }
 
@@ -204,8 +214,8 @@ public abstract class AbstractDimenAction extends AnAction {
                                 int index = text.indexOf(">", indexStart) + 1;
                                 stringBuilder.append(text.substring(0, index));
                                 stringBuilder.append("\n");
-                                Set<String> setDp = new HashSet<String>(floatDimen[0].keySet());
-                                Set<String> setSp = new HashSet<String>(floatDimen[1].keySet());
+                                Set<String> setDp = new LinkedHashSet<>(floatDimen[0].keySet());
+                                Set<String> setSp = new LinkedHashSet<>(floatDimen[1].keySet());
                                 for (int j = 0; tags != null && j < tags.length; j++) {
                                     XmlTag tag = tags[j];
                                     String name = tag.getAttribute("name").getValue();

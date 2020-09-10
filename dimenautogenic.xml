@@ -56,12 +56,881 @@
     <exclude name="**/?*.aj"/>
   </patternset>
   
-  <property name="project.jdk.home" value=""/>
-  <property name="project.jdk.bin" value=""/>
-  <property name="project.jdk.classpath" value=""/>
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.11" value="${jdk.home.11}/bin"/>
+  <path id="jdk.classpath.11">
+    <fileset dir="${jdk.home.11}">
+      <include name="../Home!/java.base"/>
+      <include name="../Home!/java.compiler"/>
+      <include name="../Home!/java.datatransfer"/>
+      <include name="../Home!/java.desktop"/>
+      <include name="../Home!/java.instrument"/>
+      <include name="../Home!/java.logging"/>
+      <include name="../Home!/java.management"/>
+      <include name="../Home!/java.management.rmi"/>
+      <include name="../Home!/java.naming"/>
+      <include name="../Home!/java.net.http"/>
+      <include name="../Home!/java.prefs"/>
+      <include name="../Home!/java.rmi"/>
+      <include name="../Home!/java.scripting"/>
+      <include name="../Home!/java.se"/>
+      <include name="../Home!/java.security.jgss"/>
+      <include name="../Home!/java.security.sasl"/>
+      <include name="../Home!/java.smartcardio"/>
+      <include name="../Home!/java.sql"/>
+      <include name="../Home!/java.sql.rowset"/>
+      <include name="../Home!/java.transaction.xa"/>
+      <include name="../Home!/java.xml"/>
+      <include name="../Home!/java.xml.crypto"/>
+      <include name="../Home!/javafx.base"/>
+      <include name="../Home!/javafx.controls"/>
+      <include name="../Home!/javafx.fxml"/>
+      <include name="../Home!/javafx.graphics"/>
+      <include name="../Home!/javafx.media"/>
+      <include name="../Home!/javafx.swing"/>
+      <include name="../Home!/javafx.web"/>
+      <include name="../Home!/jdk.accessibility"/>
+      <include name="../Home!/jdk.aot"/>
+      <include name="../Home!/jdk.attach"/>
+      <include name="../Home!/jdk.charsets"/>
+      <include name="../Home!/jdk.compiler"/>
+      <include name="../Home!/jdk.crypto.cryptoki"/>
+      <include name="../Home!/jdk.crypto.ec"/>
+      <include name="../Home!/jdk.dynalink"/>
+      <include name="../Home!/jdk.hotspot.agent"/>
+      <include name="../Home!/jdk.httpserver"/>
+      <include name="../Home!/jdk.internal.ed"/>
+      <include name="../Home!/jdk.internal.jvmstat"/>
+      <include name="../Home!/jdk.internal.le"/>
+      <include name="../Home!/jdk.internal.vm.ci"/>
+      <include name="../Home!/jdk.internal.vm.compiler"/>
+      <include name="../Home!/jdk.internal.vm.compiler.management"/>
+      <include name="../Home!/jdk.jdi"/>
+      <include name="../Home!/jdk.jdwp.agent"/>
+      <include name="../Home!/jdk.jfr"/>
+      <include name="../Home!/jdk.jsobject"/>
+      <include name="../Home!/jdk.localedata"/>
+      <include name="../Home!/jdk.management"/>
+      <include name="../Home!/jdk.management.agent"/>
+      <include name="../Home!/jdk.management.jfr"/>
+      <include name="../Home!/jdk.naming.dns"/>
+      <include name="../Home!/jdk.naming.rmi"/>
+      <include name="../Home!/jdk.net"/>
+      <include name="../Home!/jdk.pack"/>
+      <include name="../Home!/jdk.scripting.nashorn"/>
+      <include name="../Home!/jdk.scripting.nashorn.shell"/>
+      <include name="../Home!/jdk.sctp"/>
+      <include name="../Home!/jdk.security.auth"/>
+      <include name="../Home!/jdk.security.jgss"/>
+      <include name="../Home!/jdk.unsupported"/>
+      <include name="../Home!/jdk.xml.dom"/>
+      <include name="../Home!/jdk.zipfs"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.11}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.11}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.11"/>
   
   
   <!-- Project Libraries -->
+  
+  <path id="library.gradle:_com.jetbrains:aapt2-proto-0.3.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/aapt2-proto-0.3.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:asm-all-7.0.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/asm-all-7.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:assertj-core-3.13.2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/assertj-core-3.13.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:automaton-1.12-1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/automaton-1.12-1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:baksmali-2.2.4:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/baksmali-2.2.4.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-anim-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-anim-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-awt-util-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-awt-util-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-bridge-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-bridge-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-codec-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-codec-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-constants-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-constants-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-css-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-css-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-dom-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-dom-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-ext-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-ext-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-gvt-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-gvt-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-parser-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-parser-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-svg-dom-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-svg-dom-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-svggen-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-svggen-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-transcoder-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-transcoder-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-util-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-util-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:batik-xml-1.12.0-8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/batik-xml-1.12.0-8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:bcpkix-jdk15on-1.64:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/bcpkix-jdk15on-1.64.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:bcprov-jdk15on-1.64:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/bcprov-jdk15on-1.64.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:bootstrap:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/bootstrap.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:built-in-server:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/built-in-server.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:cglib-nodep-3.2.4:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/cglib-nodep-3.2.4.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:cli-parser-1.1.5:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/cli-parser-1.1.5.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:common-image-3.4.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/common-image-3.4.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:common-io-3.4.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/common-io-3.4.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:common-lang-3.4.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/common-lang-3.4.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:commons-codec-1.13:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/commons-codec-1.13.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:commons-collections-3.2.2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/commons-collections-3.2.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:commons-compress-1.18:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/commons-compress-1.18.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:commons-httpclient-3.1-patched:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/commons-httpclient-3.1-patched.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:commons-imaging-1.0-rc-1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/commons-imaging-1.0-RC-1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:commons-io-2.6:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/commons-io-2.6.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:commons-lang-2.4:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/commons-lang-2.4.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:commons-logging-1.2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/commons-logging-1.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:commons-net-3.6:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/commons-net-3.6.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:configuration-store-impl:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/configuration-store-impl.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:credential-store:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/credential-store.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:dbus-java-3.0.2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/dbus-java-3.0.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:delight-rhino-sandbox-0.0.11:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/delight-rhino-sandbox-0.0.11.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:dexlib2-2.2.4:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/dexlib2-2.2.4.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:eddsa-0.2.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/eddsa-0.2.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:error_prone_annotations-2.3.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/error_prone_annotations-2.3.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:extensions:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/extensions.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:external-system-rt:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/external-system-rt.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:failureaccess-1.0.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/failureaccess-1.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:fastinfoset-1.2.15:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/FastInfoset-1.2.15.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:fluent-hc-4.5.10:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/fluent-hc-4.5.10.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:forms-1.1-preview:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/forms-1.1-preview.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:forms_rt:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/forms_rt.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:groovy-all-2.4.17:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/groovy-all-2.4.17.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:gson-2.8.5:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/gson-2.8.5.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:guava-27.1-jre:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/guava-27.1-jre.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:hamcrest-core-1.3:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/hamcrest-core-1.3.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:hdrhistogram-2.1.4:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/HdrHistogram-2.1.4.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:httpclient-4.5.10:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/httpclient-4.5.10.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:httpcore-4.4.12:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/httpcore-4.4.12.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:httpmime-4.5.10:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/httpmime-4.5.10.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:icons:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/icons.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:idea:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/idea.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:idea_rt:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/idea_rt.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:imageio-core-3.4.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/imageio-core-3.4.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:imageio-metadata-3.4.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/imageio-metadata-3.4.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:imageio-tiff-3.4.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/imageio-tiff-3.4.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:images:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/images.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:imgscalr-lib-4.2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/imgscalr-lib-4.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:ini4j-0.5.5-2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/ini4j-0.5.5-2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:intellij-coverage-agent-1.0.508:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/intellij-coverage-agent-1.0.508.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:intellij-dvcs:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/intellij-dvcs.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:intellij-test-discovery-agent-1.0.508:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/intellij-test-discovery-agent-1.0.508.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:intellij-xml:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/intellij-xml.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:ion-java-1.5.2-2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/ion-java-1.5.2-2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:isorelax-20030108:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/isorelax-20030108.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:istack-commons-runtime-3.0.7:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/istack-commons-runtime-3.0.7.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:j2objc-annotations-1.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/j2objc-annotations-1.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jackson-annotations-2.10.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jackson-annotations-2.10.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jackson-core-2.10.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jackson-core-2.10.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jackson-databind-2.10.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jackson-databind-2.10.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jackson-module-kotlin-2.9.10:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jackson-module-kotlin-2.9.10.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:java-compatibility-1.0.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/java-compatibility-1.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:java-utils-1.0.5:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/java-utils-1.0.5.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:javac2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/javac2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:javassist-3.22.0-ga:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/javassist-3.22.0-GA.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:javax.activation-1.2.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/javax.activation-1.2.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:javax.annotation-api-1.3.2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/javax.annotation-api-1.3.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jaxb-api-2.3.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jaxb-api-2.3.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jaxb-runtime-2.3.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jaxb-runtime-2.3.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jaxen-1.2.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jaxen-1.2.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jbcrypt-1.0.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jbcrypt-1.0.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jcip-annotations-1.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jcip-annotations-1.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jdkannotations:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jdkAnnotations.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jdom:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jdom.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jediterm-pty-2.24:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jediterm-pty-2.24.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jetcheck-0.2.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jetCheck-0.2.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jing-20030619:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jing-20030619.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jna-platform:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jna-platform.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jna:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jna.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jps-model:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jps-model.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jsch-0.1.55:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jsch-0.1.55.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jshell-frontend:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jshell-frontend.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:json:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/json.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jsoup-1.12.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jsoup-1.12.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:jsr305:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/jsr305.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:junit-4.12:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/junit-4.12.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:kotlin-gradle-plugin-model-1.3.50:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/kotlin-gradle-plugin-model-1.3.50.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:kotlin-reflect-1.3.31:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/kotlin-reflect-1.3.31.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:kotlin-stdlib-1.3.31:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/kotlin-stdlib-1.3.31.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:kotlin-stdlib-common-1.3.31:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/kotlin-stdlib-common-1.3.31.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:kotlin-stdlib-jdk7-1.3.31:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/kotlin-stdlib-jdk7-1.3.31.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:kotlin-stdlib-jdk8-1.3.31:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/kotlin-stdlib-jdk8-1.3.31.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:kotlin-test-1.3.31:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/kotlin-test-1.3.31.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:kotlin-test-common-1.3.31:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/kotlin-test-common-1.3.31.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:kotlinx-coroutines-core-1.2.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/kotlinx-coroutines-core-1.2.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:kotlinx-coroutines-jdk8-1.2.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/kotlinx-coroutines-jdk8-1.2.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:kryo-2.24.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/kryo-2.24.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:log4j:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/log4j.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:lz4-java-1.6.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/lz4-java-1.6.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:markdownj-core-0.4.2-snapshot:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/markdownj-core-0.4.2-SNAPSHOT.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:microba:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/microba.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:miglayout-core-5.2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/miglayout-core-5.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:miglayout-swing-5.2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/miglayout-swing-5.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:minlog-1.2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/minlog-1.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:nanoxml-2.2.3:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/nanoxml-2.2.3.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:nekohtml-1.9.22:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/nekohtml-1.9.22.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:netty-buffer-4.1.41.final:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/netty-buffer-4.1.41.Final.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:netty-codec-4.1.41.final:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/netty-codec-4.1.41.Final.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:netty-codec-http-4.1.41.final:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/netty-codec-http-4.1.41.Final.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:netty-codec-http2-4.1.41.final:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/netty-codec-http2-4.1.41.Final.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:netty-codec-socks-4.1.41.final:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/netty-codec-socks-4.1.41.Final.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:netty-common-4.1.41.final:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/netty-common-4.1.41.Final.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:netty-handler-4.1.41.final:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/netty-handler-4.1.41.Final.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:netty-handler-proxy-4.1.41.final:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/netty-handler-proxy-4.1.41.Final.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:netty-resolver-4.1.41.final:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/netty-resolver-4.1.41.Final.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:netty-transport-4.1.41.final:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/netty-transport-4.1.41.Final.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:nosyncbuilder-26.5.0.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/nosyncbuilder-26.5.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:objenesis-3.0.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/objenesis-3.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:openapi:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/openapi.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:org.eclipse.xtend.lib-2.17.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/org.eclipse.xtend.lib-2.17.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:org.eclipse.xtend.lib.macro-2.17.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/org.eclipse.xtend.lib.macro-2.17.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:org.eclipse.xtext.xbase.lib-2.17.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/org.eclipse.xtext.xbase.lib-2.17.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:oro-2.0.8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/oro-2.0.8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:picocontainer-1.2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/picocontainer-1.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:platform-api:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/platform-api.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:platform-concurrency:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/platform-concurrency.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:platform-core-ui:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/platform-core-ui.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:platform-diagnostic:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/platform-diagnostic.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:platform-ide-util-io:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/platform-ide-util-io.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:platform-impl:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/platform-impl.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:platform-objectserializer-annotations:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/platform-objectSerializer-annotations.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:platform-objectserializer:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/platform-objectSerializer.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:platform-servicecontainer:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/platform-serviceContainer.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:platform-util-ex:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/platform-util-ex.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:platform-util-ui:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/platform-util-ui.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:plexus-utils-3.0.22:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/plexus-utils-3.0.22.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:protobuf-java-3.5.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/protobuf-java-3.5.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:protos-26.5.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/protos-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:proxy-vole-1.0.5-jb.2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/proxy-vole-1.0.5-jb.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:pty4j-0.9.6:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/pty4j-0.9.6.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:purejavacomm-0.0.11.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/purejavacomm-0.0.11.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:qdox-2.0-m10:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/qdox-2.0-M10.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:rd-core-0.193.101:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/rd-core-0.193.101.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:rd-swing-0.193.101:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/rd-swing-0.193.101.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:resources:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/resources.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:resources_en:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/resources_en.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:rhino-1.7.11:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/rhino-1.7.11.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:rngom-20051226-patched:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/rngom-20051226-patched.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:sa-jdwp-1.13:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/sa-jdwp-1.13.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:servicemessages-2019.1.4:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/serviceMessages-2019.1.4.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:slf4j-api-1.7.25:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/slf4j-api-1.7.25.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:slf4j-log4j12-1.7.25:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/slf4j-log4j12-1.7.25.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:snakeyaml-1.24:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/snakeyaml-1.24.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:snakeyaml-engine-2.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/snakeyaml-engine-2.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:spellchecker:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/spellchecker.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:sqlite-jdbc-3.21.0.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/sqlite-jdbc-3.21.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:stax-api-1.0.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/stax-api-1.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:stax-ex-1.8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/stax-ex-1.8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:streamex-0.6.8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/streamex-0.6.8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:swingx-core-1.6.2-2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/swingx-core-1.6.2-2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:tips-intellij-idea-community-193.4:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/tips-intellij-idea-community-193.4.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:trang-core:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/trang-core.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:trilead-ssh2-build-217-jenkins-14:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/trilead-ssh2-build-217-jenkins-14.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:trove4j:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/trove4j.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:txw2-2.3.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/txw2-2.3.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:util-2.2.4:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/util-2.2.4.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:util:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/util.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:velocity-1.7:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/velocity-1.7.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:winp-1.28:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/winp-1.28.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:xercesimpl-2.12.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/xercesImpl-2.12.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:xml-apis-ext-1.3.04:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/xml-apis-ext-1.3.04.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:xml-resolver-1.2:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/xml-resolver-1.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:xmlbeans-2.6.0:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/xmlbeans-2.6.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:xmlgraphics-commons-2.3:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/xmlgraphics-commons-2.3.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:xmlpull-1.1.3.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/xmlpull-1.1.3.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:xmlrpc-2.0.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/xmlrpc-2.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:xpp3_min-1.1.4c:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/xpp3_min-1.1.4c.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:xstream-1.4.11.1:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/xstream-1.4.11.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.jetbrains:xz-1.8:2019.3.4.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/lib/xz-1.8.jar"/>
+  </path>
   
   <path id="library.gradle:_junit:junit:4.12.classpath">
     <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar"/>
@@ -73,6 +942,654 @@
   
   <path id="library.gradle:_org.jetbrains:annotations:19.0.0.classpath">
     <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/19.0.0/efbff6752f67a7c9de3e4251c086a88e23591dfd/annotations-19.0.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:adt-ui:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/adt-ui.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:aether-api-1.1.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/aether-api-1.1.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:aether-connector-basic-1.1.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/aether-connector-basic-1.1.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:aether-dependency-resolver:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/aether-dependency-resolver.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:aether-impl-1.1.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/aether-impl-1.1.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:aether-spi-1.1.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/aether-spi-1.1.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:aether-transport-file-1.1.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/aether-transport-file-1.1.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:aether-transport-http-1.1.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/aether-transport-http-1.1.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:aether-util-1.1.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/aether-util-1.1.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:allopen-ide-plugin:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/allopen-ide-plugin.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:android-common:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/android-common.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:android-extensions-compiler:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/android-extensions-compiler.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:android-extensions-ide:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/android-extensions-ide.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:android-profilers:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/android-profilers.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:android-rt:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/android-rt.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:android:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/android.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:androidannotations:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/androidAnnotations.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:annotations-13.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/annotations-13.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:annotations-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/annotations-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:apkanalyzer-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/apkanalyzer-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:artwork:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/artwork.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:asm-5.0.3:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/asm-5.0.3.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:asm-analysis-5.0.3:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/asm-analysis-5.0.3.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:asm-tree-5.0.3:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/asm-tree-5.0.3.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:baselibrary-3.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/baseLibrary-3.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:binary-resources-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/binary-resources-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:build-common:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/build-common.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:builder-model-3.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/builder-model-3.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:builder-test-api-3.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/builder-test-api-3.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:common-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/common-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:commons-compress-1.8.1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/commons-compress-1.8.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:commons-lang3-3.4:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/commons-lang3-3.4.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:completion-ranking-java-0.0.7:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/completion-ranking-java-0.0.7.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:crash-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/crash-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:databinding-common-3.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/databinding-common-3.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:databinding-compiler-3.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/databinding-compiler-3.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:databinding-compiler-common-3.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/databinding-compiler-common-3.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:ddmlib-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/ddmlib-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:debugger-memory-agent-0.0.11:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/debugger-memory-agent-0.0.11.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:deploy-java-proto-26.5.0.1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/deploy-java-proto-26.5.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:deploy-java-version-26.5.0.1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/deploy-java-version-26.5.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:deployer-26.5.0.1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/deployer-26.5.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:draw9patch-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/draw9patch-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:dvlib-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/dvlib-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:ecj-4.10:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/ecj-4.10.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:flags-26.5.0.1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/flags-26.5.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:freemarker-2.3.20:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/freemarker-2.3.20.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:gradle-api-5.2.1-sp1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/gradle/lib/gradle-api-5.2.1-sp1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:gradle-api-impldep-5.2.1-sp1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/gradle/lib/gradle-api-impldep-5.2.1-sp1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:gradle-common:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/gradle/lib/gradle-common.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:gradle-java:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/gradle-java/lib/gradle-java.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:gradle-jps-plugin:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/gradle-java/lib/gradle-jps-plugin.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:gradle-launcher-5.2.1-sp1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/gradle/lib/gradle-launcher-5.2.1-sp1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:gradle-tooling-extension-api:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/gradle/lib/gradle-tooling-extension-api.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:gradle-tooling-extension-impl:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/gradle/lib/gradle-tooling-extension-impl.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:gradle-toolingloaderrt:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/gradle/lib/gradle-toolingLoaderRt.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:gradle-wrapper-5.2.1-sp1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/gradle/lib/gradle-wrapper-5.2.1-sp1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:gradle:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/gradle/lib/gradle.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:groovy-jps-plugin:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Groovy/lib/groovy-jps-plugin.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:groovy-rt-constants:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Groovy/lib/groovy-rt-constants.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:groovy:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Groovy/lib/Groovy.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:groovy_rt:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Groovy/lib/groovy_rt.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:idea-junit:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/junit/lib/idea-junit.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:instantapps-api-1.5:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/instantapps-api-1.5.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:intellij.android.kotlin.extensions:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/intellij.android.kotlin.extensions.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:intellij.android.kotlin.idea:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/intellij.android.kotlin.idea.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:intellij.android.kotlin.output.parser:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/intellij.android.kotlin.output.parser.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:intellilang-jps-plugin:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/IntelliLang/lib/intellilang-jps-plugin.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:intellilang:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/IntelliLang/lib/IntelliLang.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:jarutils:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/jarutils.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:java-api:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/java-api.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:java-impl:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/java-impl.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:java-lib-model-3.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/java-lib-model-3.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:java-lib-model-builder-3.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/java-lib-model-builder-3.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:java_resources_en:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/java_resources_en.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:javac2:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/javac2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:javaslang-2.0.6:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/javaslang-2.0.6.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:javaslang-match-2.0.6:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/javaslang-match-2.0.6.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:javawriter-2.2.1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/javawriter-2.2.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:javax.inject-1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/javax.inject-1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:jdkannotations:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/jdkAnnotations.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:jgoodies-common-1.4.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/jgoodies-common-1.4.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:jgraphx-3.4.1.3:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/jgraphx-3.4.1.3.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:jps-builders-6:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/jps-builders-6.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:jps-builders:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/jps-builders.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:jps-launcher:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/jps-launcher.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:jshell-protocol:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/jshell-protocol.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:junit-rt:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/junit/lib/junit-rt.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:junit5-rt:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/junit/lib/junit5-rt.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kapt3-idea:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kapt3-idea.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-allopen-compiler-plugin:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-allopen-compiler-plugin.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-compiler-client-embeddable:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-compiler-client-embeddable.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-daemon-client-new:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-daemon-client-new.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-daemon-client:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-daemon-client.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-daemon:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-daemon.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-gradle-tooling:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-gradle-tooling.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-noarg-compiler-plugin:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-noarg-compiler-plugin.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-plugin:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-plugin.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-reflect:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-reflect.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-sam-with-receiver-compiler-plugin:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-sam-with-receiver-compiler-plugin.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-script-runtime:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-script-runtime.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-script-util:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-script-util.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-scripting-common:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-scripting-common.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-scripting-compiler-impl:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-scripting-compiler-impl.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-scripting-intellij:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-scripting-intellij.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-scripting-jvm:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-scripting-jvm.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-stdlib-common:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-stdlib-common.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-stdlib-jdk7:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-stdlib-jdk7.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-stdlib-jdk8:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-stdlib-jdk8.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-stdlib:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-stdlib.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-util-io:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-util-io.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-util-klib-metadata:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-util-klib-metadata.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlin-util-klib:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlin-util-klib.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlinx-coroutines-core-1.2.1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlinx-coroutines-core-1.2.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlinx-coroutines-jdk8-1.2.1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlinx-coroutines-jdk8-1.2.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kotlinx-serialization-compiler-plugin:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/kotlinx-serialization-compiler-plugin.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:kxml2-2.3.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/kxml2-2.3.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:layoutinspector-26.5.0.1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/layoutinspector-26.5.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:layoutlib-26.5.0.2:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/layoutlib-26.5.0.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:layoutlib-api-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/layoutlib-api-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:layoutlib-loader:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/layoutlib-loader.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:libwebp:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/libwebp.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:lint-api-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/lint-api-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:lint-checks-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/lint-checks-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:manifest-merger-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/manifest-merger-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:markdown-0.1.25:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/markdown-0.1.25.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:maven-aether-provider-3.3.9:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/maven-aether-provider-3.3.9.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:maven-artifact-3.3.9:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/maven-artifact-3.3.9.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:maven-builder-support-3.3.9:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/maven-builder-support-3.3.9.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:maven-model-3.3.9:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/maven-model-3.3.9.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:maven-model-builder-3.3.9:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/maven-model-builder-3.3.9.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:maven-repository-metadata-3.3.9:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/maven-repository-metadata-3.3.9.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:moshi-1.6.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/moshi-1.6.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:ninepatch-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/ninepatch-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:noarg-ide-plugin:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/noarg-ide-plugin.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:okio-1.14.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/okio-1.14.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:org.eclipse.elk.alg.layered-0.3.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/org.eclipse.elk.alg.layered-0.3.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:org.eclipse.elk.core-0.3.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/org.eclipse.elk.core-0.3.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:org.eclipse.elk.graph-0.3.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/org.eclipse.elk.graph-0.3.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:org.eclipse.emf.common-2.12.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/org.eclipse.emf.common-2.12.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:org.eclipse.emf.ecore-2.12.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/org.eclipse.emf.ecore-2.12.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:pepk:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/pepk.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:perflib-26.5.0.1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/perflib-26.5.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:pixelprobe-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/pixelprobe-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:plexus-component-annotations-1.6:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/plexus-component-annotations-1.6.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:plexus-interpolation-1.21:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/plexus-interpolation-1.21.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:plexus-utils-3.0.22:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/plexus-utils-3.0.22.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:properties:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/properties/lib/properties.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:r8-master-26.5.0.1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/r8-master-26.5.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:repository-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/repository-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:resources:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/java/lib/resources.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:resources_en:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/resources_en.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:sam-with-receiver-ide-plugin:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/Kotlin/lib/sam-with-receiver-ide-plugin.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:sdk-common-26.5.0.2:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/sdk-common-26.5.0.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:sdklib-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/sdklib-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:shared-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/shared-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:smali:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/smali/lib/smali.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:spantable:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/spantable.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:studio-profiler-grpc-26.5.0.1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/studio-profiler-grpc-26.5.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:tracer-26.5.0.1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/tracer-26.5.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:tracker-26.5.0:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/tracker-26.5.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_unzipped.com.jetbrains.plugins:usb-devices-26.5.0.1:ideaic-ic-193.6911.18-withsources.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.4/169a36dea75ab9befac719c1110715ef4fb316c7/ideaIC-2019.3.4/plugins/android/lib/usb-devices-26.5.0.1.jar"/>
   </path>
   <!-- Register Custom Compiler Taskdefs -->
   <property name="javac2.home" value="${idea.home}/lib"/>
@@ -93,17 +1610,38 @@
   
   <import file="${basedir}/.idea/modules/module_dimenautogenic.xml"/>
   
-  <import file="${basedir}/.idea/modules/module_dimenautogenic.main.xml"/>
-  
-  <import file="${basedir}/.idea/modules/module_dimenautogenic.test.xml"/>
-  
   <target name="init" description="Build initialization">
     <!-- Perform any build initialization in this target -->
   </target>
   
-  <target name="clean" depends="clean.module.dimenautogenic, clean.module.dimenautogenic.main, clean.module.dimenautogenic.test" description="cleanup all"/>
+  <target name="clean" depends="clean.module.dimenautogenic, clean.artifact.dimenautogenic:jar" description="cleanup all"/>
   
-  <target name="build.modules" depends="init, clean, compile.module.dimenautogenic, compile.module.dimenautogenic.main, compile.module.dimenautogenic.test" description="build all modules"/>
+  <target name="build.modules" depends="init, clean, compile.module.dimenautogenic" description="build all modules"/>
   
-  <target name="all" depends="build.modules" description="build all"/>
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.dimenautogenic:jar" value="${basedir}/out/artifacts/dimenAutogenic_jar"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.dimenAutogenic.jar" value="${artifacts.temp.dir}/dimenAutogenic.jar"/>
+  </target>
+  
+  <target name="clean.artifact.dimenautogenic:jar" description="clean dimenAutogenic:jar artifact output">
+    <delete dir="${artifact.output.dimenautogenic:jar}"/>
+  </target>
+  
+  <target name="artifact.dimenautogenic:jar" depends="init.artifacts" description="Build &#39;dimenAutogenic:jar&#39; artifact">
+    <mkdir dir="${artifact.output.dimenautogenic:jar}"/>
+    <jar destfile="${temp.jar.path.dimenAutogenic.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${dimenautogenic.main.output.dir}"/>
+    </jar>
+    <copy file="${temp.jar.path.dimenAutogenic.jar}" tofile="${artifact.output.dimenautogenic:jar}/dimenAutogenic.jar"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.dimenautogenic:jar" description="Build all artifacts">
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
 </project>
